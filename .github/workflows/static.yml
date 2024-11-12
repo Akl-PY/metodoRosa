@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Especifica la ruta 'root/src' para subir solo los archivos de esa carpeta
-          path: 'root/src'
+          path: './src'
 
       - name: Deploy to GitHub Pages
         id: deployment
