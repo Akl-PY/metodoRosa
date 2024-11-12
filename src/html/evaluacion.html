@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación ROSA</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../js/formControl.js"></script>
+</head>
+<body>
+    <header class="bg-primary text-white py-4 mb-4 text-center d-flex justify-content-center align-items-center" 
+    style="background-image: url('../img/header.jpg'); background-size: cover; background-position: -30% 35%;">
+    <div class="container mx-2">
+            <div class="d-flex align-items-center">
+                <div class="bg-white d-flex justify-content-center align-items-center text-center mx-2 rounded-circle shadow" style="width: 60px; height: 60px;">
+                    <img src="../img/logo.png" alt="Ergonomics Icon" width="60">
+                </div>
+                
+
+                <div>
+                    <h1 class="fs-1 mb-1" style="text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;"><strong>Método ROSA</strong></h1>
+                    <p class="fs-5 mb-0" style="text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;">Evaluación ergonómica para mejorar tu espacio de trabajo.</p>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="fs-1">Evaluación Método ROSA</h1>
+            <p>Responde a continuación el siguiente cuestionario.</p>
+            <hr>
+        </div>
+        <form id="rosaForm">
+            <div class="text-center group mt-4" id="group1">
+                <h2 class="fs-2">Uso diario</h2>
+                <div class="card col-12 col-md-8 mx-auto mt-4 " id="group1-1">
+                    <div class="card-header"><h3 class="fs-3">Tiempo de uso diario</h3></div>
+                    <div class="card-body">
+                        <div class="form-group d-flex justify-content-center align-items-center">
+                            <label class="form-label me-2" for="tiempoUso">Uso continuo más de 4 horas diarias</label>
+                            <input class="form-check" type="radio" value="alto" name="tiempoUso" required>
+                            <img src="" alt="" srcset="">
+                        </div>
+                        <div class="form-group d-flex justify-content-center align-items-center mt-3">
+                            <label class="form-label me-2">Uso menos de 1 hora diaria</label>
+                            <input type="radio" name="tiempoUso" value="bajo">
+                            <img src="" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(1,1)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(1,1)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center group mt-4 d-none" id="group2">
+                <h2 class="fs-2">Asiento</h2>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group2-1">
+                    <div class="card-header"><h3 class="fs-3">Altura del asiento</h3></div>
+                    <div class="card-body">
+                        <!-- Fila 1: Rodillas 90° (Postura neutra) -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSilla">Rodillas 90° (Postura neutra)</label>
+                            <input class="form-check" type="radio" name="alturaSilla" value="neutra" required>
+                            <img src="../img/1.jpeg" alt="Rodillas 90° (Postura neutra)" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSilla">Rodillas &lt;90° (Asiento bajo)</label>
+                            <input type="radio" name="alturaSilla" value="baja">
+                            <img src="../img/2.jpeg" alt="Rodillas <90° (Asiento bajo)" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSilla">Rodillas &gt;90° (Asiento alto)</label>
+                            <input type="radio" name="alturaSilla" value="alta">
+                            <img src="../img/3.jpeg" alt="Rodillas >90° (Asiento alto)" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSilla">Pies sin tocar el suelo</label>
+                            <input type="radio" name="alturaSilla" value="pies">
+                            <img src="../img/4.jpeg" alt="Pies sin tocar el suelo" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <hr>
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSillaAdicional">Espacio insuficiente para las piernas</label>
+                            <input class="form-check" type="checkbox" name="alturaSillaAdicional" value="espacio">
+                            <img src="../img/5.jpeg" alt="Espacio insuficiente para las piernas" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <!-- Fila 2: Altura no regulable -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaSillaAdicional">Altura no regulable</label>
+                            <input class="form-check" type="checkbox" name="alturaSillaAdicional" value="noAjustable">
+                            <img src="../img/6.jpeg" alt="Altura no regulable" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(2,1)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(2,1)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group2-2">
+                    <div class="card-header"><h3 class="fs-3">Profundidad del asiento</h3></div>
+                    <div class="card-body">
+                        <!-- Opción 1: 8 cm entre borde y pierna -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="profundidadSilla">8 cm entre borde y pierna</label>
+                            <input class="form-check" type="radio" name="profundidadSilla" value="neutra" required>
+                            <img src="../img/7.jpeg" alt="8 cm entre borde y pierna" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <!-- Opción 2: Menos de 8 cm entre borde y pierna -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="profundidadSilla">&lt; 8 cm entre borde y pierna</label>
+                            <input class="form-check" type="radio" name="profundidadSilla" value="menor">
+                            <img src="../img/8.jpeg" alt="Menos de 8 cm entre borde y pierna" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <!-- Opción 3: Más de 8 cm entre borde y pierna -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="profundidadSilla">&gt; 8 cm entre borde y pierna</label>
+                            <input class="form-check" type="radio" name="profundidadSilla" value="mayor">
+                            <img src="../img/9.jpeg" alt="Más de 8 cm entre borde y pierna" class="ms-3" style="max-height: 100px;">
+                        </div>
+                        <hr>
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="profundidadSillaAdicional">Profundidad no regulable</label>
+                            <input class="form-check" type="checkbox" name="profundidadSillaAdicional" value="noAjustable">
+                            <img src="../img/10.jpeg" alt="Profundidad no regulable" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(2,2)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(2,2)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group2-3">
+                    <div class="card-header">
+                        <h3 class="fs-3">Reposabrazos</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Codos a 90° y hombros relajados -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="reposabrazos1">Codos a 90° y hombros relajados.</label>
+                            <input class="form-check" type="radio" name="reposabrazos" value="neutra" required>
+                            <img src="../img/11.jpeg" alt="Codos a 90°" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Codos altos o bajos (desviación) -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="reposabrazos2">Codos altos o bajos (desviación).</label>
+                            <input class="form-check" type="radio" name="reposabrazos" value="desviacion">
+                            <img src="../img/12.jpeg" alt="Codos altos o bajos" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Bordes afilados o duros -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="reposabrazosAdicional1">Bordes afilados o duros</label>
+                            <input class="form-check" type="checkbox" name="reposabrazosAdicional" value="bordes">
+                            <img src="../img/13.jpeg" alt="Bordes afilados" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: Demasiado anchos -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="reposabrazosAdicional2">Demasiado anchos</label>
+                            <input class="form-check" type="checkbox" name="reposabrazosAdicional" value="ancho">
+                            <img src="../img/14.jpeg" alt="Demasiado anchos" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 3: No regulables -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="reposabrazosAdicional3">No regulables</label>
+                            <input class="form-check" type="checkbox" name="reposabrazosAdicional" value="noAjustable">
+                            <img src="../img/15.jpeg" alt="No regulables" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(2,3)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(2,3)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group2-4">
+                    <div class="card-header">
+                        <h3 class="fs-3">Respaldo</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Apoyo lumbar, inclinación 95°-110° -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldo1">Apoyo lumbar, inclinación 95°-110°</label>
+                            <input class="form-check" type="radio" name="respaldo" value="neutra" required>
+                            <img src="../img/16.jpeg" alt="Apoyo lumbar, inclinación 95°-110°" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Sin apoyo lumbar o inadecuado -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldo2">Sin apoyo lumbar o inadecuado</label>
+                            <input class="form-check" type="radio" name="respaldo" value="sinApoyo">
+                            <img src="../img/17.jpeg" alt="Sin apoyo lumbar" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 3: Inclinación >110° o <95° -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldo3">Inclinación >110° o <95°</label>
+                            <input class="form-check" type="radio" name="respaldo" value="inclinacion">
+                            <img src="../img/18.jpeg" alt="Inclinación >110° o <95°" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 4: No utiliza el respaldo -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldo4">No utiliza el respaldo</label>
+                            <input class="form-check" type="radio" name="respaldo" value="noUsa">
+                            <img src="../img/19.jpeg" alt="No utiliza el respaldo" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Superficie alta (hombros encogidos) -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldoAdicional1">Superficie alta (hombros encogidos)</label>
+                            <input class="form-check" type="checkbox" name="respaldoAdicional" value="alto">
+                            <img src="../img/20.jpeg" alt="Superficie alta" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: Respaldo no regulable -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="respaldoAdicional2">Respaldo no regulable</label>
+                            <input class="form-check" type="checkbox" name="respaldoAdicional" value="noAjustable">
+                            <img src="../img/21.jpeg" alt="Respaldo no regulable" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(2,4)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(2,4)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="text-center group mt-4 d-none" id="group3">
+                <h2 class="fs-2">Elementos</h2>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group3-1">
+                    <div class="card-header">
+                        <h3 class="fs-3">Teléfono</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Cuello recto (manos libres) -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="telefono1">Cuello recto (manos libres)</label>
+                            <input class="form-check" type="radio" name="telefono" value="neutra" required>
+                            <img src="../img/22.jpeg" alt="Cuello recto (manos libres)" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Teléfono alejado >30 cm -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="telefono2">Teléfono alejado >30 cm</label>
+                            <input class="form-check" type="radio" name="telefono" value="alejado">
+                            <img src="../img/23.jpeg" alt="Teléfono alejado >30 cm" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Sujeción con hombro/cuello -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="telefonoAdicional1">Sujeción con hombro/cuello</label>
+                            <input class="form-check" type="checkbox" name="telefonoAdicional" value="hombro">
+                            <img src="../img/24.jpeg" alt="Sujeción con hombro/cuello" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: No existe opción de manos libres -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="telefonoAdicional2">No existe opción de manos libres</label>
+                            <input class="form-check" type="checkbox" name="telefonoAdicional" value="sinManosLibres">
+                            <img src="../img/25.jpeg" alt="No existe opción de manos libres" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(3,1)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(3,1)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group3-2">
+                    <div class="card-header">
+                        <h3 class="fs-3">Ratón</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Ratón alineado con el hombro -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="raton1">Ratón alineado con el hombro</label>
+                            <input class="form-check" type="radio" name="raton" value="neutra" required>
+                            <img src="../img/33.jpeg" alt="Ratón alineado con el hombro" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Ratón no alineado o fuera de alcance -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="raton2">Ratón no alineado o fuera de alcance</label>
+                            <input class="form-check" type="radio" name="raton" value="desviacion">
+                            <img src="../img/34.jpeg" alt="Ratón no alineado o fuera de alcance" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Ratón pequeño, agarre en pinza -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="ratonAdicional1">Ratón pequeño, agarre en pinza</label>
+                            <input class="form-check" type="checkbox" name="ratonAdicional" value="pequeno">
+                            <img src="../img/35.jpeg" alt="Ratón pequeño, agarre en pinza" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: Ratón y teclado a diferentes alturas -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="ratonAdicional2">Ratón y teclado a diferentes alturas</label>
+                            <input class="form-check" type="checkbox" name="ratonAdicional" value="diferenteAltura">
+                            <img src="../img/36.jpeg" alt="Ratón y teclado a diferentes alturas" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 3: Reposamanos duro o puntos de presión -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="ratonAdicional3">Reposamanos duro o puntos de presión</label>
+                            <input class="form-check" type="checkbox" name="ratonAdicional" value="reposamanos">
+                            <img src="../img/37.jpeg" alt="Reposamanos duro o puntos de presión" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(3,2)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(3,2)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group3-3">
+                    <div class="card-header">
+                        <h3 class="fs-3">Teclado</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Muñeca recta, hombros relajados -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="teclado1">Muñeca recta, hombros relajados</label>
+                            <input class="form-check" type="radio" name="teclado" value="neutra" required>
+                            <img src="../img/38.jpeg" alt="Muñeca recta, hombros relajados" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Extensión muñeca >15° -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="teclado2">Extensión muñeca >15°</label>
+                            <input class="form-check" type="radio" name="teclado" value="desviacion">
+                            <img src="../img/39.jpeg" alt="Extensión muñeca >15°" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Desviación al escribir -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="tecladoAdicional1">Desviación al escribir</label>
+                            <input class="form-check" type="checkbox" name="tecladoAdicional" value="desviacionEscribir">
+                            <img src="../img/40.jpeg" alt="Desviación al escribir" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: Teclado elevado, hombros encogidos -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="tecladoAdicional2">Teclado elevado, hombros encogidos</label>
+                            <input class="form-check" type="checkbox" name="tecladoAdicional" value="elevado">
+                            <img src="../img/41.jpeg" alt="Teclado elevado, hombros encogidos" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 3: Alcance por encima de la cabeza -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="tecladoAdicional3">Alcance por encima de la cabeza</label>
+                            <input class="form-check" type="checkbox" name="tecladoAdicional" value="elevado">
+                            <img src="../img/42.jpeg" alt="Alcance por encima de la cabeza" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 4: Soporte teclado no ajustable -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="tecladoAdicional4">Soporte teclado no ajustable</label>
+                            <input class="form-check" type="checkbox" name="tecladoAdicional" value="soporteNoAjustable">
+                            <img src="../img/43.jpeg" alt="Soporte teclado no ajustable" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(3,3)">Atrás</button>
+                            <button class="btn btn-success" onclick="nextForm(3,3)">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-center group mt-4 d-none" id="group4">
+                <h2 class="fs-2">Cabeza y otros</h2>
+                <div class="card col-12 col-md-8 mx-auto mt-4 d-none" id="group4-1">
+                    <div class="card-header">
+                        <h3 class="fs-3">Altura de los ojos</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Opción 1: Pantalla a 40-75 cm, a la altura de los ojos -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjos1">Pantalla a 40-75 cm, a la altura de los ojos</label>
+                            <input class="form-check" type="radio" name="alturaOjos" value="neutra" required>
+                            <img src="../img/26.jpeg" alt="Pantalla a 40-75 cm, a la altura de los ojos" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 2: Pantalla baja, debajo de 30° -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjos2">Pantalla baja, debajo de 30°</label>
+                            <input class="form-check" type="radio" name="alturaOjos" value="baja">
+                            <img src="../img/27.jpeg" alt="Pantalla baja, debajo de 30°" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Opción 3: Pantalla alta, extensión de cuello -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjos3">Pantalla alta, extensión de cuello</label>
+                            <input class="form-check" type="radio" name="alturaOjos" value="alta">
+                            <img src="../img/28.jpeg" alt="Pantalla alta, extensión de cuello" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Línea divisoria entre las secciones -->
+                        <hr>
+                
+                        <h3 class="fs-3">Criterios adicionales</h3>
+                
+                        <!-- Criterio 1: Distancia >75 cm -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjosAdicional1">Distancia >75 cm</label>
+                            <input class="form-check" type="checkbox" name="alturaOjosAdicional" value="distancia">
+                            <img src="../img/29.jpeg" alt="Distancia >75 cm" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 2: Giro de cuello -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjosAdicional2">Giro de cuello</label>
+                            <input class="form-check" type="checkbox" name="alturaOjosAdicional" value="giro">
+                            <img src="../img/30.jpeg" alt="Giro de cuello" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 3: No hay portadocumentos y se necesita -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjosAdicional3">No hay portadocumentos y se necesita</label>
+                            <input class="form-check" type="checkbox" name="alturaOjosAdicional" value="portadocumentos">
+                            <img src="../img/31.jpeg" alt="No hay portadocumentos y se necesita" class="ms-3" style="max-height: 100px;">
+                        </div>
+                
+                        <!-- Criterio 4: Reflejos en pantalla -->
+                        <div class="form-group d-flex justify-content-center align-items-center mb-3">
+                            <label class="form-label me-2" for="alturaOjosAdicional4">Reflejos en pantalla</label>
+                            <input class="form-check" type="checkbox" name="alturaOjosAdicional" value="reflejos">
+                            <img src="../img/32.jpeg" alt="Reflejos en pantalla" class="ms-3" style="max-height: 100px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-danger" onclick="prevForm(4,1)">Atrás</button>
+                            <button  class="btn btn-success" onclick="calcularROSA()">Calcular</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    
+        <div class="result" id="result"></div>
+    </div>
+   
+</body>
+</html>
