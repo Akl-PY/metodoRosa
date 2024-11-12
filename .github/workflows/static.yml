@@ -29,11 +29,15 @@ jobs:
         with:
           enablement: true
 
+      - name: Move files to root
+        run: |
+          # Crea una carpeta temporal para mover los archivos de 'src'
+          mv src/* .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Especifica la ruta 'root/src' para subir solo los archivos de esa carpeta
-          path: './src'
+          path: '.'  # Sube el contenido de la raíz actual donde están los archivos de 'src'
 
       - name: Deploy to GitHub Pages
         id: deployment
