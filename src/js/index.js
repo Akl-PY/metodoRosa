@@ -75,19 +75,24 @@ function calcularROSA() {
 
     // Resultados
     const resultadoDiv = document.getElementById('result');
-    resultadoDiv.innerHTML = `<h2>Resultado de la Evaluación</h2><h4>Puntuación total: ${puntos}</h4>`;
+    resultadoDiv.innerHTML = `<h2 class="bg-primary text-light">Resultado de la Evaluación</h2><h4>Puntuación total: ${puntos}</h4>`;
     form.classList.add('d-none')
     if (puntos < 5) {
-        resultadoDiv.innerHTML += "<h4>La ergonomía de su espacio de trabajo es adecuada.</h4>";
+        resultadoDiv.innerHTML += "<h4 class='text-success fs-4'>La ergonomía de su espacio de trabajo es adecuada.</h4>";
     } else if (puntos < 10) {
-        resultadoDiv.innerHTML += "<h4>Hay algunas áreas que necesitan mejoras ergonómicas.</h4>";
+        resultadoDiv.innerHTML += "<h4 class='text-warning fs-4'>Hay algunas áreas que necesitan mejoras ergonómicas.</h4>";
     } else {
-        resultadoDiv.innerHTML += "<h4>Se requieren cambios significativos para mejorar la ergonomía.</h4>";
+        resultadoDiv.innerHTML += "<h4 class='text-danger fs-4'>Se requieren cambios significativos para mejorar la ergonomía.</h4>";
     }
-
     document.getElementById('rosaForm').addEventListener('submit', function(event) {
         event.preventDefault();
         calcularROSA();
     });
+    document.getElementById('reiniciar').classList.remove('d-none')
+
     
 }
+document.getElementById('rosaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    calcularROSA();
+});
