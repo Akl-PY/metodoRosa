@@ -10,11 +10,6 @@ function nextForm(group, step) {
         nextStep = nextGroup +"-"+ 1
     }
 
-    console.log(actualGroup); 
-    console.log(actualStep);  
-    console.log("--------")
-    console.log(nextGroup); 
-    console.log(nextStep); 
 
     
     document.getElementById(actualGroup).classList.add('d-none');
